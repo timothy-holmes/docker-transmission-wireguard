@@ -1,8 +1,8 @@
-FROM --platform=$TARGETPLATFORM alpine:3.12 as base
+FROM --platform=$TARGETPLATFORM alpine:3.22 as base
 
-ENV DOCKERIZE_VERSION=v0.6.1 \
-    S6_VERSION=v2.1.0.2 \
-    SHADOWSOCKS_VERSION=v1.8.23
+ENV DOCKERIZE_VERSION=v0.9.7 \
+    S6_VERSION=v2.13.2.0 \
+    SHADOWSOCKS_VERSION=v1.23.5
 
 FROM base as base-amd64
 
