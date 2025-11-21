@@ -1,0 +1,32 @@
+# Git files
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+CHANGELOG.md
+LICENSE*
+README.md
+
+# CI/CD
+.github
+
+# IDE and editor files
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build artifacts
+*.log
+*.tmp
+
+# Docker files (don't include Dockerfile itself in build context)
+# Note: Dockerfile is needed for build, so not ignoring it
+
+# Plan files
+*.plan.md
+
