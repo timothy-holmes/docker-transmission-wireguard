@@ -10,7 +10,6 @@ Although it is built for other architectures as well, please exercise caution wh
 Now that Docker Hub has implemented usage restrictions, you might want to use an alternative. See the various image URLs below:
 
 - `ghcr.io/vidurb/transmission-wireguard` (GitHub Container Registry)
-- `public.ecr.aws/t0n7w8o1/transmission-wireguard` (Amazon Elastic Container Registry)
 - `vidurb/transmission-wireguard` (Docker Hub)
 
 Built using GitHub Actions:
