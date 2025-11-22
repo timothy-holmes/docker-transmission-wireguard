@@ -24,4 +24,6 @@ RUN rc-update add transmission-daemon default
 
 EXPOSE 9091
 
+VOLUME [ “/sys/fs/cgroup” ]
+
 CMD ["/sbin/openrc", "--nocolor", "default"]
