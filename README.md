@@ -23,6 +23,8 @@ services:
     container_name: transmission-wireguard
     cap_add:
       - NET_ADMIN
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
     volumes:
       - ./wg0.conf:/etc/wireguard/wg0.conf
       - ./transmission:/var/lib/transmission/config
@@ -31,7 +33,21 @@ services:
     restart: unless-stopped
 ```
 
-Note that the image expects your WireGuard configuration file to be named wg0.conf and be in the `/etc/wireguard/` directory. You can override the expected name using the `WG_CONFIG_NAME` environment variable.
+Alternatively, you can use `docker run` directly:
+
+```bash
+docker run -d \
+  --name transmission-wireguard \
+  --cap-add NET_ADMIN \
+  --sysctl net.ipv4.conf.all.src_valid_mark=1 \
+  -v ./wg0.conf:/etc/wireguard/wg0.conf \
+  -v ./transmission:/var/lib/transmission/config \
+  -p 9091:9091 \
+  --restart unless-stopped \
+  ghcr.io/vidurb/transmission-wireguard
+```
+
+Note that the image expects your WireGuard configuration file to be named wg0.conf and be in the `/etc/wireguard/` directory.
 
 ### Building the Image
 
