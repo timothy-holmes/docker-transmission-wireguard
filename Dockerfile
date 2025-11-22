@@ -26,4 +26,4 @@ EXPOSE 9091
 
 VOLUME [ “/sys/fs/cgroup” ]
 
-CMD ["/sbin/openrc", "--nocolor", "default"]
+CMD ["/sbin/init"]
