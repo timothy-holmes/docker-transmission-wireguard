@@ -23,16 +23,15 @@ services:
     container_name: transmission-wireguard
     cap_add:
       - NET_ADMIN
-      - SYS_MODULE
     volumes:
-      - ./wireguard:/etc/wireguard
+      - ./wg0.conf:/etc/wireguard/wg0.conf
       - ./transmission:/var/lib/transmission/config
     ports:
       - "9091:9091"
-      - "51413:51413"
-      - "51413:51413/udp"
     restart: unless-stopped
 ```
+
+Note that the image expects your WireGuard configuration file to be named wg0.conf and be in the `/etc/wireguard/` directory. You can override the expected name using the `WG_CONFIG_NAME` environment variable.
 
 ### Building the Image
 
