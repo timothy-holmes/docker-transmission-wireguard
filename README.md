@@ -26,8 +26,7 @@ services:
       - SYS_MODULE
     volumes:
       - ./wireguard:/etc/wireguard
-      - ./transmission:/config/transmission
-      - ./downloads:/downloads
+      - ./transmission:/var/lib/transmission/config
     ports:
       - "9091:9091"
       - "51413:51413"
