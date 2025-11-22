@@ -1,4 +1,0 @@
-#!/usr/bin/with-contenv sh
-# shellcheck shell=sh
-
-s6-setuidgid privoxy privoxy --no-daemon /etc/privoxy/config
